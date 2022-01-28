@@ -1,0 +1,97 @@
+// Declare variable
+$letterColor: #15023a;
+
+// Create animation rules
+@keyframes lefToRight {
+	from {
+		transform: translateX(-500px);
+		opacity: 0.5;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+// Create @mixin
+@mixin flex($jtc, $ali) {
+	display: flex;
+	justify-content: $jtc;
+	align-items: $ali;
+}
+
+// Make styles
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.header {
+	position: relative;
+
+	&__img {
+		width: 100%;
+		animation: lefToRight 2s ease;
+	}
+
+	&__list {
+		@include flex(space-evenly, center);
+		position: absolute;
+		top: 20px;
+		right: 0;
+		left: 0;
+
+		li {
+			list-style: none;
+			padding: 16px;
+			border-radius: 8px;
+			transition: 0.3s ease;
+
+			&:hover {
+				background-color: $letterColor;
+			}
+
+			&:hover a {
+				color: #fff;
+			}
+
+			a {
+				text-decoration: none;
+				color: $letterColor;
+				font-size: 20px;
+				font-weight: 500;
+
+				i {
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	@include flex(space-around, center);
+	margin-top: 50px;
+	padding: 30px 0;
+	background-color: #ccc;
+
+	&__list {
+		@include flex(space-around, center);
+		width: 50%;
+
+		li {
+			list-style: none;
+
+			a {
+				text-decoration: none;
+				color: $letterColor;
+				font-size: 18px;
+
+				i {
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+}
