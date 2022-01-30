@@ -24,7 +24,11 @@ $letterColor: #15023a;
 * {
 	padding: 0;
 	margin: 0;
+}
+
+html {
 	box-sizing: border-box;
+	font-family: Helvetica, sans-serif;
 }
 
 .header {
@@ -67,6 +71,28 @@ $letterColor: #15023a;
 				}
 			}
 		}
+	}
+}
+
+.hero {
+	@include flex(space-around, center);
+	margin: 50px 0;
+	padding: 50px;
+
+	&__description {
+		width: 40%;
+
+		h2 {
+			margin-bottom: 1.5rem;
+		}
+
+		p {
+			line-height: 1.5;
+		}
+	}
+
+	&__img {
+		width: 50%;
 	}
 }
 
