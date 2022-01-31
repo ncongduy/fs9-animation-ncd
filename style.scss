@@ -1,5 +1,9 @@
 // Declare variable
 $letterColor: #15023a;
+$letterColorActive: #fff;
+$buttonColor: #0dcaf0;
+$buttonActive: #198754;
+$footerBackground: #ccc;
 
 // Create animation rules
 @keyframes lefToRight {
@@ -51,13 +55,14 @@ html {
 			padding: 16px;
 			border-radius: 8px;
 			transition: 0.3s ease;
+			cursor: pointer;
 
 			&:hover {
 				background-color: $letterColor;
 			}
 
 			&:hover a {
-				color: #fff;
+				color: $letterColorActive;
 			}
 
 			a {
@@ -126,9 +131,9 @@ html {
 			margin-top: 1rem;
 			padding: 0.5rem;
 			border-radius: 4px;
-			border: #0dcaf0 1px solid;
+			border: $buttonColor 1px solid;
 
-			background-color: #0dcaf0;
+			background-color: $buttonColor;
 			color: $letterColor;
 
 			cursor: pointer;
@@ -139,9 +144,9 @@ html {
 			}
 
 			&:active {
-				background-color: #198754;
+				background-color: $buttonActive;
 				opacity: 1;
-				color: #fff;
+				color: $letterColorActive;
 			}
 		}
 	}
@@ -151,7 +156,7 @@ html {
 	@include flex(space-around, center);
 	margin-top: 50px;
 	padding: 30px 0;
-	background-color: #ccc;
+	background-color: $footerBackground;
 
 	&__list {
 		@include flex(space-around, center);
